@@ -1,0 +1,8 @@
+# Python env
+.venv
+
+# Pycache
+**/__pycache__/
+
+# Pytest cache
+.pytest_cache/
