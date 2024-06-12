@@ -74,6 +74,18 @@ pytest
 ```
 
 
+## Pytest + HTML Report
+To generate a HTML report, run the command below:
+1. Install the `pytest-html` package:
+```bash
+pip install pytest-html
+```
+2. Run the command below:
+```bash
+pytest --html=test_report/report.html
+```
+
+
 ## Recommendations & References
 - Create [configuration files](https://docs.pytest.org/en/stable/reference/reference.html#configuration-options) to your tests, like `pytest.ini` or `setup.cfg`.
 - [Documentation](https://docs.pytest.org/en/stable/index.html)
