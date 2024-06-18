@@ -2,29 +2,32 @@
 
 ## Índice
 - [Introdução](#introdução)
-- [Aplicativos](#aplicativos)
-- [Processo de instalação](#processo-de-instalação)
-- [Como criar e executar um teste](#how-to-create-and-run-a-test)
- - [Convenção para testar o diretório](#convention-to-test-directory)
- - [Exemplo](#exemplo)
-- [Recomendações e Referências](#recomendações--referências)
+- [Aplicações](#aplicações)
+- [Processo de Instalação](#processo-de-instalação)
+- [Como Criar e Executar um Teste](#como-criar-e-executar-um-teste)
+  - [Convenção para Diretório de Testes](#convenção-para-diretório-de-testes)
+  - [Exemplo](#exemplo)
+- [Pytest + Relatório HTML](#pytest--relatório-html)
+- [Recursos Futuros](#recursos-futuros)
+- [Recomendações e Referências](#recomendações-e-referências)
+
 
 ## Introdução
-Pytest é uma estrutura de [código aberto](https://github.com/pytest-dev/pytest) para testes em Python que facilita a gravação de testes pequenos e legíveis e pode ser dimensionada para suportar testes funcionais complexos para aplicativos e bibliotecas .
+Pytest é um framework de código aberto para testes em Python que facilita a escrita de testes pequenos e legíveis, e pode escalar para suportar testes funcionais complexos para aplicações e bibliotecas.
 
-[Possui integração com o framework `unittest`.](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest %20%baseado em 2D%20testes%20out%20of%20the%20box.)
+[Ele tem integração com o framework `unittest`.](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased%20tests%20out%20of%20the%20box.)
 
 
-## Formulários
+## Aplicações
 Pytest é usado para todos os tipos de testes em Python quando:
-- Testes unitários (componentes individuais)
+- Testes unitários (Componentes individuais)
 - Testes de integração (Interação entre dois ou mais componentes)
 - Testes de aceitação (Verificar se o sistema atende aos requisitos especificados pelo usuário ou cliente)
-- Testes de carga (verifique o desempenho do sistema)
-- Testes de regressão (se o sistema ainda funcionar após uma alteração)
+- Testes de carga (Verificar o desempenho do sistema)
+- Testes de regressão (Se o sistema ainda funciona após uma mudança)
 
 
-## Processo de instalação
+## Processo de Instalação
 O processo de execução será explicado antes
 
 1. Crie um ambiente virtual:
@@ -36,8 +39,8 @@ python -m venv ./.venv
 ```bash
 ./.venv/Scripts/ativar
 ```
- 1. No Linux, o caminho é `./.venv/bin/activate`.
- 2. No Windows, não esqueça de permitir a execução de scripts com o comando `Set-ExecutionPolicy Unrestricted -Scope Process`.
+  a. No Linux, o caminho é `./.venv/bin/activate`.
+  b. No Windows, não esqueça de permitir a execução de scripts com o comando `Set-ExecutionPolicy Unrestricted -Scope Process`.
 
 3. Instale o Pytest:
 ```bash
@@ -60,7 +63,7 @@ Quando `pytest` for executado, ele procurará arquivos que começam com `test_` 
 ### Exemplo
 Criando um arquivo de teste e executando-o:
 
-```píton
+```python
 # testes/test_sample.py
 def teste_amostra():
   afirmar 1 == 1
@@ -86,8 +89,15 @@ pytest --html=test_report/report.html
 ```
 
 
+## Recursos Futuros
+- Criar casos para comparar o Pytest com o Unittest usando o segundo link em Recomendações e Referências.
+- Criar um tópico explicando como containerizar os testes com Docker.
+- Remover a pasta `Foo` e a segunda linha no arquivo `.env`, pois não são necessárias para o projeto, apenas para fins acadêmicos.
+
+
 ## Recomendações e referências
 - Crie [arquivos de configuração](https://docs.pytest.org/en/stable/reference/reference.html#configuration-options) para seus testes, como `pytest.ini` ou `setup.cfg`.
 - [Documentação](https://docs.pytest.org/en/stable/index.html)
 - [Pytest vs Unittest](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased% 20testes%20out%20of%20the%20box.)
 - [Médio](https://medium.com/assertqualityassurance/tutorial-de-pytest-para-iniciantes-cbdd81c6d761)
+- [História do Pytest](https://docs.pytest.org/pt/stable/history.html)
