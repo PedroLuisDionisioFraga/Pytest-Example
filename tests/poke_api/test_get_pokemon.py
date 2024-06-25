@@ -18,7 +18,7 @@ def test_get_piplup_contains_piplup():
   assert status_code == 200
   assert "piplup" in response
 
-def test_get_piplup_not_contains_piplup():
+def test_get_piplup_not_contains_charmander():
   response, status_code = get_piplup()
   assert status_code == 200
   assert not "charmander" in response
