@@ -13,9 +13,10 @@
 
 
 ## Introduction
-Pytest is a [open source](https://github.com/pytest-dev/pytest) framework for testing in Python that makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries.
+Pytest is an [open source](https://github.com/pytest-dev/pytest) framework for testing in Python that makes it easy to write simple tests just using assertions and can scale to support complex functional tests for applications and libraries.\
+Tests are defined at run time and can therefore be written dynamically.
 
-[It has integration with `unittest` framework.](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased%20tests%20out%20of%20the%20box.)
+It has integration with [unittest](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased%20tests%20out%20of%20the%20box.) framework.
 
 
 ## Applications
@@ -47,7 +48,7 @@ python -m venv ./.venv
 pip install pytest
 ```
 
-4. (OPTIONAL) Install the Pytest-html to generate a report in HTML:
+4. (OPTIONAL) Install the Pytest-html to generate a report in HTML (Coverage):
 ```bash
 pip install pytest-html
 ```
@@ -58,7 +59,7 @@ pip install pytest-html
 ### Convention to Test Directory
 When `pytest` is executed, it will search for files that start with `test_` or end with `_test.py` and will execute it.
 
-It's hight recommended to create a archive called `__init__.py` in the modules folder to pytest acknowledge the folder as a module.
+[According to the documentation](https://docs.pytest.org/en/stable/how-to/capture-warnings.html#internal-pytest-warnings), it is highly recommended not to use constructors in classes, ` __init__` as this prevents the class from being instantiated.
 
 ### Example
 Creating a test file and running it:

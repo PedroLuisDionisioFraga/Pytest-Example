@@ -13,9 +13,10 @@
 
 
 ## Introdução
-Pytest é um framework de código aberto para testes em Python que facilita a escrita de testes pequenos e legíveis, e pode escalar para suportar testes funcionais complexos para aplicações e bibliotecas.
+Pytest é um framework de [código aberto](https://github.com/pytest-dev/pytest) para testes em Python que facilita a escrita de testes simples apenas usando assertivas podendo escalar para suportar testes funcionais complexos para aplicações e bibliotecas.\
+Os testes são definidos em tempo de execução podendo assim serem escritos de forma dinâmica.
 
-[Ele tem integração com o framework `unittest`.](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased%20tests%20out%20of%20the%20box.)
+Ele tem integração com o framework [unittest](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased%20tests%20out%20of%20the%20box.).
 
 
 ## Aplicações
@@ -37,7 +38,7 @@ python -m venv ./.venv
 
 2. Ative o ambiente virtual no Windows:
 ```bash
-./.venv/Scripts/ativar
+./.venv/Scripts/activate
 ```
   a. No Linux, o caminho é `./.venv/bin/activate`.
   b. No Windows, não esqueça de permitir a execução de scripts com o comando `Set-ExecutionPolicy Unrestricted -Scope Process`.
@@ -58,7 +59,7 @@ pip install pytest-html
 ### Convenção para testar o diretório
 Quando `pytest` for executado, ele procurará arquivos que começam com `test_` ou terminam com `_test.py` e o executará.
 
-É altamente recomendado criar um arquivo chamado `__init__.py` na pasta de módulos para que o pytest reconheça a pasta como um módulo.
+[De acordo com a documentação](https://docs.pytest.org/en/stable/how-to/capture-warnings.html#internal-pytest-warnings), é altamente recomendado não criar usar construtores em classes, `__init__` pois isso evita que a classe seja instanciada.
 
 ### Exemplo
 Criando um arquivo de teste e executando-o:
@@ -66,7 +67,7 @@ Criando um arquivo de teste e executando-o:
 ```python
 # testes/test_sample.py
 def teste_amostra():
-  afirmar 1 == 1
+  assert 1 == 1
 ```
 ```bash
 pytest testes/test_sample.py
@@ -98,6 +99,6 @@ pytest --html=test_report/report.html
 ## Recomendações e referências
 - Crie [arquivos de configuração](https://docs.pytest.org/en/stable/reference/reference.html#configuration-options) para seus testes, como `pytest.ini` ou `setup.cfg`.
 - [Documentação](https://docs.pytest.org/en/stable/index.html)
-- [Pytest vs Unittest](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased% 20testes%20out%20of%20the%20box.)
+- [Pytest vs Unittest](https://docs.pytest.org/en/7.1.x/how-to/unittest.html#:~:text=pytest%20supports%20running%20Python%20unittest%20%2Dbased%20testes%20out%20of%20the%20box)
 - [Médio](https://medium.com/assertqualityassurance/tutorial-de-pytest-para-iniciantes-cbdd81c6d761)
 - [História do Pytest](https://docs.pytest.org/pt/stable/history.html)
